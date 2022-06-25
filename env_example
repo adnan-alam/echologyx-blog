@@ -1,0 +1,2 @@
+DJANGO_SECRET_KEY=a secure secret key
+SQLITE_DATABASE_NAME=example_db.sqlite3
