@@ -1,0 +1,8 @@
+{% autoescape off %}
+Hi,
+
+Please click on the link to confirm your registration,
+http://{{ domain }}{% url 'account:verify_account' %}?email={{ email }}&user_id={{ user_id }}
+
+Thank you!
+{% endautoescape %}
