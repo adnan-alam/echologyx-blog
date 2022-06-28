@@ -10,7 +10,7 @@ User = get_user_model()
 
 
 class Post(models.Model):
-    author = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
+    author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
     title = models.CharField(max_length=125)
     slug = models.SlugField(max_length=160, unique=True)
     content = RichTextField(verbose_name=_("Content"))
@@ -30,7 +30,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    author = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
+    author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
     post = models.ForeignKey(Post, verbose_name=_("Post"), on_delete=models.CASCADE)
     content = RichTextField(verbose_name=_("Content"))
     created_at = models.DateTimeField(auto_now_add=True)
