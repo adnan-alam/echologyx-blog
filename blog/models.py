@@ -38,3 +38,20 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.id} | {self.post.slug}"
+
+
+class CustomTemplate(models.Model):
+    slug = models.SlugField(
+        max_length=160, verbose_name=_("Template Slug"), unique=True
+    )
+    body_html = RichTextField(verbose_name=_("Body HTML"))
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("Custom Template")
+        verbose_name_plural = _("Custom Templates")
+
+    def __str__(self):
+        return f"{self.slug} | Active: {self.is_active}"
