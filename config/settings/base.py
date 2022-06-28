@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    # 3rd party apps
+    "ckeditor",
     # custom apps
     "account",
     "blog",
